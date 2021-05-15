@@ -30,11 +30,11 @@ toggleUserState(users, "Mango").then(loggerToggle);
 toggleUserState(users, "Lux").then(loggerToggle);
 
 // TASK 3
-const logSuccess = (id, time) => {
-    console.log(`Transaction ${id} processed in ${time}ms`);
+const logSuccess = ({ id, time }) => {
+    console.log(`Transaction ${id} processed in ${time} ms`);
 };
 
-const logError = (id) => {
+const logError = ({ id }) => {
     console.warn(`Error processing transaction ${id}. Please try again later.`);
 };
 
@@ -42,9 +42,6 @@ const logError = (id) => {
  * Должно работать так
  */
 makeTransaction({ id: 70, amount: 150 }).then(logSuccess).catch(logError);
-
 makeTransaction({ id: 71, amount: 230 }).then(logSuccess).catch(logError);
-
 makeTransaction({ id: 72, amount: 75 }).then(logSuccess).catch(logError);
-
 makeTransaction({ id: 73, amount: 100 }).then(logSuccess).catch(logError);

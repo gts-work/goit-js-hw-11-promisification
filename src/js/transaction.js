@@ -10,10 +10,10 @@ export const makeTransaction = (transaction) => {
             const canProcess = Math.random() > 0.3;
 
             if (canProcess) {
-                resolve(transaction.id, delay);
+                resolve({ id: transaction.id, time: delay });
             }
 
-            reject(transaction.id);
+            reject({ id: transaction.id });
         }, delay);
     });
 };
